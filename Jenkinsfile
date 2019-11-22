@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                foo('kubectl') {
+                sh script: "ls -la"
+                tool('kubectl') {
                     sh script: "kubectl version"
+                    sh script: "ls -la"
                 }
             }
         }
