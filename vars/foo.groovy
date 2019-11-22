@@ -7,6 +7,7 @@ def call(String tool, Closure body) {
     if (!containers.keySet().contains(tool)) {
         throw new Exception("${tool} is not a supported tool choice at this time. Please choose from ${containers.keySet()}")
     }
+    echo "${containers[tool]}"
     podTemplate(containers: [containers[tool]]) {
         node(POD_LABEL) {
             body()
