@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                foo {
-                    require 'kubectl'
+                foo('kubectl') {
+                    sh script: "kubectl version"
                 }
             }
         }
