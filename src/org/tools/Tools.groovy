@@ -12,6 +12,6 @@ class Tools implements Serializable {
     }
 
     public static set(String tool) {
-        required.add(tools[tool])
+        required.add this.tools[tool]
     }
 } 
