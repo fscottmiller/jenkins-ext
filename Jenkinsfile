@@ -1,5 +1,6 @@
 @Library('jenkins-ext') _
 
+require 'helm'
 pipeline {
     agent any
 
