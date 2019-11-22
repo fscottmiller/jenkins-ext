@@ -3,19 +3,13 @@
 require 'helm'
 require 'kubectl'
 
-stage('will this work') {
-    steps {
-        echo "idk"
-    }
-}
-
-pipeline {
-    agent any
-
+kubepipe {
     stages {
-        stage('test') {
+        stage('hello kubectl') {
             steps {
-                echo 'hmm'
+                container('kubectl') {
+                    sh script: "kubectl version"
+                }
             }
         }
     }
