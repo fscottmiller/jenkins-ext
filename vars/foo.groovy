@@ -10,7 +10,9 @@ def call(String tool, Closure body) {
     echo "${containers[tool]}"
     podTemplate(containers: [containers[tool]]) {
         node(POD_LABEL) {
-            body()
+            container(tool) {
+                body()
+            }
         }
     }
 }
