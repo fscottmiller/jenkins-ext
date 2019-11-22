@@ -1,7 +1,5 @@
 package org.tools
 
-import org.csanchez.jenkins.plugins.kubernetes
-
 class Tools implements Serializable {
     private static toolset = [
         kubectl: [name: 'kubectl', image: 'fscottmiller/kubectl', ttyEnabled: true, command: 'cat'],
