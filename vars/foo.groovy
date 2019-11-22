@@ -4,8 +4,8 @@ def call(String tool, Closure body) {
         helm: containerTemplate(name: 'helm', image: 'fscottmiller/helm', ttyEnabled: true, command: 'cat')
     ]
 
-    if (!containers.keys().contains(tool)) {
-        throw new Exception("${tool} is not a supported tool choice at this time. Please choose from ${containers.keys()}")
+    if (!containers.keySet().contains(tool)) {
+        throw new Exception("${tool} is not a supported tool choice at this time. Please choose from ${containers.keySet()}")
     }
     podTemplate(containers: [containers[tool]]) {
         node(POD_LABEL) {
