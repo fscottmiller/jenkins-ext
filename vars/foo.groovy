@@ -3,14 +3,14 @@ def containers = [
     helm: containerTemplate(name: 'helm', image: 'fscottmiller/helm', ttyEnabled: true, command: 'cat')
 ]
 
-def call(Closure body) {
-    body()
-}
-
-def require(String requirement) {
-    if (containers.keys().contains(requirement)) {
-        echo requirement
-    } else {
-        echo "Sorry, ${requirement} is not a supported dependency."
+def call(String tool, Closure body) {
+    if (!containers.keys().contains(tool)) {
+        throw new Exception("${tool} is not a supported tool choice at this time. Please choose from ${containers.keys()}")
+    }
+    podTemplate(containers: [containers[tool]]) {
+        node(POD_LABEL) {
+            body()
+        }
     }
 }
+
