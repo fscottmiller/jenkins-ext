@@ -4,7 +4,9 @@ require 'helm'
 require 'kubectl'
 
 stage('will this work') {
-    echo "idk"
+    steps {
+        echo "idk"
+    }
 }
 
 pipeline {
