@@ -1,12 +1,9 @@
 import org.tools.*
 
 def call(Closure body) {
-    pipeline {
-        agent {
-            kubernetes {
-                podTemplate(containers: Tools.get())
-            }
+    podTemplate(containers: Tools.get()) {
+        node(POD_TEMPLATE) {
+            body()
         }
-        body()
     }
 }
