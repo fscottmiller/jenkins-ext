@@ -18,7 +18,7 @@ def call(Map options=[:], Closure body) {
                     }
                 }
             }
-
+            println "${this.metaClass.methods}"
             body()
         }
     }
