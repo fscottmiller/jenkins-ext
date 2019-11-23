@@ -4,12 +4,14 @@ def call(String tool) {
     Tools.require tool
 }
 
+
+
 def call(Map tool) {
-    echo "${tool}"
+    tool.keySet.each {
+        if (!['name', 'version'].contains(it)) {
+            throw new Exception("Please only specify name and version")
+        }
+    }
+    Tools.require tool
 }
 
-// if (tool.getClass() == String) {
-//         Tools.require tool
-//     } else {
-//         echo "${tool}"
-//     }
