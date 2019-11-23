@@ -8,11 +8,7 @@ def call(Map options=[:], Closure body) {
     echo "${options}"
     podTemplate(options) {
         node(POD_LABEL) {
-            println "${this.methods}"
-            println "-----"
-            this.methods.each {
-                println it.name
-            }
+            println "${this.getBinding()}"
             // this.steps.functions.each {
             //     println it.value.getFunctionName()
             // }
