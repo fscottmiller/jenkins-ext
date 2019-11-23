@@ -14,7 +14,7 @@ def call(Map options=[:], Closure body) {
             def toolSet = Tools.getToolSet()
             toolSet.keySet().each {
                 container -> toolSet[container]['commands'].keySet().each {
-                    el -> this.metaClass."${el}" {
+                    el -> this.steps.functions."${el}" {
                         String cmd -> 
                             // insert function code here
                             println "${toolSet[container]['commands'][el]} ${cmd}"
