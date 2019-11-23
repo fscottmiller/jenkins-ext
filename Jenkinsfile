@@ -7,10 +7,10 @@ import org.tools.*
 // require name: 'ruby', version: '2.5'
 
 kubepipe {
-    stage('test') {
-        def tmp = Tools.getToolSet()
-        echo tmp
-    }
+    // stage('test') {
+    //     def tmp = Tools.getToolSet()
+    //     echo tmp
+    // }
     // stage('hello python') {
     //     def version = python "python --version"
     //     echo version

@@ -15,11 +15,6 @@ class Tools implements Serializable {
         return toolSet
     }
 
-    public static getToolSet() {
-        String fileContents = new File('../resources/toolSet.yaml').text
-        return fileContents
-    }
-
     public static getRequired() {
         return required
     }
