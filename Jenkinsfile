@@ -3,7 +3,8 @@
 require 'helm'
 require 'kubectl'
 
-echo "${pipeline {}.getClass()}"
+
+
 
 kubepipe {
     stages {

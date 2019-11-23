@@ -1,4 +1,5 @@
 import org.tools.*
+import org.jenkinsci.plugins.pipeline.modeldefinition.model.Stages
 
 def stages(Closure body) {
     body()
