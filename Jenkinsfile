@@ -7,9 +7,6 @@ require name: 'python', version: '3.8.0'
 // require name: 'ruby', version: '2.5'
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    stage('test') {
-        echo tmp
-    }
     stage('hello python') {
         def version = python "python --version"
         echo version
