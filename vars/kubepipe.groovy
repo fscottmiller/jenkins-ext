@@ -1,7 +1,9 @@
 import org.tools.*
 
 def call(Closure body) {
-    echo "Using toolset ${Tools.getRequired()}"
+    Tools.getRequired().each {
+        echo "Using ${it['name']} from ${it['image']}"
+    }
     podTemplate(containers: Tools.getRequired()) {
         node(POD_LABEL) {
             body()
