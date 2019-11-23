@@ -24,3 +24,12 @@ kubepipe {
         echo version
     }
 }
+
+/*
+require 'kubectl'
+require 'helm'
+kubepipe(serviceAccount: 'jenkins-admin') {
+
+}
+
+*/
