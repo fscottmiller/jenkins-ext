@@ -5,20 +5,10 @@ require 'helm'
 require 'kubectl'
 
 kubepipe {
-    stages {
-        stage('hello kubectl') {
-            steps {
-                container('kubectl') {
-                    sh script: "kubectl version"
-                }
-            }
-        }
-        stage('hello helm') {
-            steps {
-                container('helm') {
-                    sh script: "helm version"
-                }
-            }
-        }
+    stage('hello kubectl') {
+       kubectl "kubectl version"
+    }
+    stage('hello helm') {
+        helm "helm version"
     }
 }
