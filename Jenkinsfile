@@ -2,7 +2,7 @@
 import org.tools.*
 
 // require 'python'
-require name: 'ruby', version: 'latest'
+require Name: 'ruby', version: 'latest'
 // require 'nodejs'
 // require name: 'ruby', version: '2.5'
 
