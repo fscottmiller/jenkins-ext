@@ -1,5 +1,5 @@
 def call(String script, boolean returnStdout = true) {
-    container('node') {
+    container('nodejs') {
         sh script: script, returnStdout: returnStdout
     }
 }

@@ -6,7 +6,7 @@ class Tools implements Serializable {
         helm: [name: 'helm', image: 'fscottmiller/helm', ttyEnabled: true, command: 'cat'],
         python: [name: 'python', image: 'python', ttyEnabled: true, command: 'cat'],
         ruby: [name: 'ruby', image: 'ruby', ttyEnabled: true, command: 'cat'],
-        node: [name: 'node', image: 'node', ttyEnabled: true, command: 'cat']
+        nodejs: [name: 'nodejs', image: 'node', ttyEnabled: true, command: 'cat']
     ]
     private static required = []
 
