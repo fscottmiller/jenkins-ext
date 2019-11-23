@@ -8,19 +8,19 @@ def call(Map options=[:], Closure body) {
     echo "${options}"
     podTemplate(options) {
         node(POD_LABEL) {
-            this.steps.functions.each {
-                println it.value.getFunctionName()
-            }
-            // def toolSet = Tools.getToolSet()
-            // toolSet.keySet().each {
-            //     container -> toolSet[container]['commands'].keySet().each {
-            //         el -> this.metaClass."${el}" {
-            //             String cmd -> 
-            //                 // insert function code here
-            //                 println "${toolSet[container]['commands'][el]} ${cmd}"
-            //         }
-            //     }
+            // this.steps.functions.each {
+            //     println it.value.getFunctionName()
             // }
+            def toolSet = Tools.getToolSet()
+            toolSet.keySet().each {
+                container -> toolSet[container]['commands'].keySet().each {
+                    el -> this.metaClass."${el}" {
+                        String cmd -> 
+                            // insert function code here
+                            println "${toolSet[container]['commands'][el]} ${cmd}"
+                    }
+                }
+            }
             body()
         }
     }
