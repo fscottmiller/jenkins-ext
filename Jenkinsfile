@@ -1,16 +1,20 @@
 @Library('jenkins-ext') _
-import org.tools.*
 
-require 'helm'
-require 'kubectl'
+require 'python'
+require 'ruby'
+require 'node'
 
 kubepipe {
-    stage('hello kubectl') {
-       def version = kubectl "kubectl version"
-       echo version
+    stage('hello python') {
+        def version = python "python --version"
+        echo version
     }
-    stage('hello helm') {
-        def version = helm "helm version"
+    stage('hello ruby') {
+        def version = python "ruby --version"
+        echo version
+    }
+    stage('hello node') {
+        def version = node "node --version"
         echo version
     }
 }
