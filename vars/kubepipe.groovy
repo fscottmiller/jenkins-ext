@@ -22,6 +22,11 @@ def call(Map options=[:], Closure body) {
                     })
                 }
             }
+            println "===== Binding Variables ======"
+            this.getBinding().variables.each {
+                println it
+                println it.value
+            }
             body()
         }
     }
