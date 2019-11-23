@@ -6,9 +6,11 @@ require 'kubectl'
 
 kubepipe {
     stage('hello kubectl') {
-       kubectl "kubectl version"
+       def version = kubectl "kubectl version"
+       echo version
     }
     stage('hello helm') {
-        helm "helm version"
+        def version = helm "helm version"
+        echo version
     }
 }
