@@ -7,8 +7,17 @@ require 'kubectl'
 kubepipe {
     stages {
         stage('hello kubectl') {
-            container('kubectl') {
-                sh script: "kubectl version"
+            steps {
+                container('kubectl') {
+                    sh script: "kubectl version"
+                }
+            }
+        }
+        stage('hello helm') {
+            steps {
+                container('helm') {
+                    sh script: "helm version"
+                }
             }
         }
     }
