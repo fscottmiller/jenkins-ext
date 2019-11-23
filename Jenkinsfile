@@ -5,10 +5,8 @@ require 'kubectl'
 
 kubepipe {
     stage('hello kubectl') {
-        steps {
-            container('kubectl') {
-                sh script: "kubectl version"
-            }
+        container('kubectl') {
+            sh script: "kubectl version"
         }
     }
 }
