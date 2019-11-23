@@ -12,16 +12,16 @@ def call(Map options=[:], Closure body) {
             // this.steps.functions.each {
             //     println it.value.getFunctionName()
             // }
-            // def toolSet = Tools.getToolSet()
-            // toolSet.keySet().each {
-            //     container -> toolSet[container]['commands'].keySet().each {
-            //         el -> this.steps.functions."${el}" {
-            //             String cmd -> 
-            //                 // insert function code here
-            //                 println "${toolSet[container]['commands'][el]} ${cmd}"
-            //         }
-            //     }
-            // }
+            def toolSet = Tools.getToolSet()
+            toolSet.keySet().each {
+                container -> toolSet[container]['commands'].keySet().each {
+                    el -> this.getBinding().setBinding("${el}", {
+                        String cmd -> 
+                            // insert function code here
+                            println "${toolSet[container]['commands'][el]} ${cmd}"
+                    })
+                }
+            }
             body()
         }
     }
