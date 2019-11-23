@@ -2,12 +2,11 @@
 import org.tools.*
 
 // require 'python'
-// require 'ruby'
+require 'ruby'
 // require 'nodejs'
 // require name: 'ruby', version: '2.5'
 
 kubepipe {
-    require 'ruby'
     // stage('test') {
     //     def tmp = Tools.getToolSet()
     //     echo tmp
