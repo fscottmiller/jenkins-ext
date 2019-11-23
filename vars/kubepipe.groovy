@@ -15,7 +15,7 @@ def call(Map options=[:], Closure body) {
             def toolSet = Tools.getToolSet()
             toolSet.keySet().each {
                 container -> toolSet[container]['commands'].keySet().each {
-                    el -> this.getBinding().setBinding("${el}", {
+                    el -> this.getBinding().setVariable("${el}", {
                         String cmd -> 
                             // insert function code here
                             println "${toolSet[container]['commands'][el]} ${cmd}"
