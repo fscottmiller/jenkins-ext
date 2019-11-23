@@ -2,7 +2,7 @@
 
 require 'python'
 require 'ruby'
-// require 'nodejs'
+require 'nodejs'
 
 kubepipe {
     stage('hello python') {

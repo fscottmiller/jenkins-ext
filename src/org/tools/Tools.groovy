@@ -8,6 +8,7 @@ class Tools implements Serializable {
         ruby: [name: 'ruby', image: 'ruby', ttyEnabled: true, command: 'cat'],
         nodejs: [name: 'nodejs', image: 'node', ttyEnabled: true, command: 'cat']
     ]
+    
     private static required = []
 
     public static toolSet() {
