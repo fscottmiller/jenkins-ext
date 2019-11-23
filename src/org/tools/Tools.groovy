@@ -15,7 +15,7 @@ class Tools implements Serializable {
         this.toolSet = toolSet
     }
 
-    public static toolSet() {
+    public static getToolSet() {
         return toolSet
     }
 
