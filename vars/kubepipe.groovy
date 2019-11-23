@@ -13,15 +13,20 @@ def call(Map options=[:], Closure body) {
             //     println it.value.getFunctionName()
             // }
             def toolSet = Tools.getToolSet()
+            def binding = new Binding()
+            this.getBinding().variables.each {
+                binding.setVariable(it, it.value)
+            }
             toolSet.keySet().each {
                 container -> toolSet[container]['commands'].keySet().each {
-                    el -> this.getBinding().setVariable("${el}", {
+                    el -> binding.setVariable("${el}", {
                         String cmd -> 
                             // insert function code here
                             println "${toolSet[container]['commands'][el]} ${cmd}"
                     })
                 }
             }
+            this.setBinding(binding)
             println "===== Binding Variables ======"
             this.getBinding().variables.each {
                 println it
