@@ -2,7 +2,7 @@
 
 require 'python'
 require 'ruby'
-require 'nodejs'
+// require 'nodejs'
 
 kubepipe {
     stage('hello python') {
@@ -13,8 +13,8 @@ kubepipe {
         def version = python "ruby --version"
         echo version
     }
-    stage('hello node') {
-        def version = nodejs "node --version"
-        echo version
-    }
+    // stage('hello node') {
+    //     def version = nodejs "node --version"
+    //     echo version
+    // }
 }
