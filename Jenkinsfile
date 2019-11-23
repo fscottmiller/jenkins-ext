@@ -6,7 +6,7 @@ require name: 'ruby', version: 'latest'
 require 'nodejs'
 // require name: 'ruby', version: '2.5'
 
-kubepipe {
+kubepipe(serviceAccount: 'jenkins-admin') {
     // stage('test') {
     //     def tmp = Tools.getToolSet()
     //     echo tmp
