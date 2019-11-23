@@ -8,6 +8,9 @@ def call(String tool) {
 }
 
 def call(Map tool) {
+    if (Tools.toolSet().isEmpty()) {
+            Tools.setToolSet(readYaml(text: libraryResource('org/tools/toolSet.yaml')))
+    }
     tool.keySet.each {
         it = it.toLowerCase()
         if (!['name', 'version'].contains(it)) {
