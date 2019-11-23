@@ -8,7 +8,7 @@ def call(Map options=[:], Closure body) {
     podTemplate(options) {
         node(POD_LABEL) {
             this.steps.functions.each {
-                println it.value
+                println it.value.getFunctionName()
             }
             // def toolSet = Tools.getToolSet()
             // toolSet.keySet().each {
