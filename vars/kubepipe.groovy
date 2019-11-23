@@ -14,9 +14,9 @@ def call(Map options=[:], Closure body) {
             // }
             def toolSet = Tools.getToolSet()
             def binding = new Binding()
-            // this.getBinding().variables.each { k, v -
-            //     binding.setVariable(k, v)
-            // }
+            this.getBinding().variables.each { k, v ->
+                binding.setVariable(k, v)
+            }
             toolSet.keySet().each {
                 container -> toolSet[container]['commands'].keySet().each {
                     el -> this.getBinding().setVariable("${el}", {
@@ -26,7 +26,7 @@ def call(Map options=[:], Closure body) {
                     })
                 }
             }
-            // this.setBinding(binding)
+            this.setBinding(binding)
             println "===== Binding Variables ======"
             this.getBinding().variables.each {
                 println it
