@@ -7,8 +7,6 @@ def call(String tool) {
     Tools.require tool
 }
 
-
-
 def call(Map tool) {
     tool.keySet.each {
         it = it.toLowerCase()
