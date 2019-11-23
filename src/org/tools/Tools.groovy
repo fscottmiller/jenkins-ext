@@ -23,7 +23,9 @@ class Tools implements Serializable {
         return required
     }
 
-    public static require(String tool) {
-        required.add toolSet[tool]
+    public static require(tool, version) {
+        def req = toolSet[tool]
+        req['image'] += version
+        required.add req
     }
 } 
