@@ -5,7 +5,7 @@ require 'python'
 
 println this.getClass()
 
-kubepipe(idleMinutes: 5, podRetention: always()) {
+kubepipe() {
     stage('test') {
         println this.getClass()
         python '--version'
