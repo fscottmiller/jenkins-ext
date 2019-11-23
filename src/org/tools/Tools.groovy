@@ -7,11 +7,11 @@ class Tools implements Serializable {
     ]
     private static required = []
 
-    public static get() {
+    public static getRequired() {
         return required
     }
 
-    public static set(String tool) {
+    public static require(String tool) {
         required.add toolset[tool]
     }
 } 

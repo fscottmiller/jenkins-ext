@@ -1,10 +1,8 @@
 @Library('jenkins-ext') _
+import org.tools.*
 
 require 'helm'
 require 'kubectl'
-
-
-
 
 kubepipe {
     stages {
