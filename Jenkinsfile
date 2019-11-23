@@ -3,7 +3,7 @@ import org.tools.*
 
 // require 'python'
 require name: 'ruby', version: 'latest'
-// require 'nodejs'
+require 'nodejs'
 // require name: 'ruby', version: '2.5'
 
 kubepipe {
@@ -19,8 +19,8 @@ kubepipe {
         def version = ruby "ruby --version"
         echo version
     }
-    // stage('hello node') {
-    //     def version = nodejs "node --version"
-    //     echo version
-    // }
+    stage('hello node') {
+        def version = nodejs "node --version"
+        echo version
+    }
 }
