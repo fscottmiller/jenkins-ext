@@ -14,8 +14,8 @@ def call(Map options=[:], Closure body) {
             // }
             def toolSet = Tools.getToolSet()
             def binding = new Binding()
-            this.getBinding().variables.each {
-                binding.setVariable(it, it.value)
+            this.getBinding().variables.each { k, v -
+                binding.setVariable(k, v)
             }
             toolSet.keySet().each {
                 container -> toolSet[container]['commands'].keySet().each {
