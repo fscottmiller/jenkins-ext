@@ -5,6 +5,7 @@ def call(Map options=[:], Closure body) {
         echo "Using ${it['name']} from ${it['image']}"
     }
     options['containers'] = Tools.getRequired()
+    echo "${options}"
     podTemplate(options) {
         node(POD_LABEL) {
             this.steps.functions.each {
