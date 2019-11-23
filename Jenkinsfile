@@ -3,7 +3,7 @@
 require 'python'
 require 'ruby'
 require 'nodejs'
-require(name: 'ruby', version: '2.5')
+require name: 'ruby', version: '2.5'
 
 kubepipe {
     stage('hello python') {
