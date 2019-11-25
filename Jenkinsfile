@@ -6,5 +6,6 @@ require 'python'
 initialize this
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    python "--version"
+    def version = python "--version"
+    echo version
 }
