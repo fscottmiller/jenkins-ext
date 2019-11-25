@@ -1,4 +1,4 @@
-@Library('jenkins-ext@dynamicFunctions') _
+@Library('jenkins-ext') _
 
 require 'nodejs'
 require 'ruby'
