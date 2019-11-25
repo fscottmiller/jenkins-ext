@@ -4,26 +4,7 @@ require 'helm'
 require 'kubectl'
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    stage('Create Namespace') {
-        using('kubectl') {
-            // todo
-        }
-    }
-    stage('Create Service Account') {
-        using('kubectl') {
-            // todo
-        }
-    }
-    stage('Create ConfigMap') {
-        using('kubectl') {
-            // todo
-        }
-    }
-    stage('Deploy Application') {
-        using('helm') {
-            // todo
-        }
-    }
+    python "hello world"
 }
 
 
