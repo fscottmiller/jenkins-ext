@@ -8,7 +8,10 @@ commands.each {
     tool -> this."${tool}" = { println tool }
 }
 
+println "jenkinsfile body: ${this}"
+
 kubepipe(serviceAccount: 'jenkins-admin') {
+    println "kube pipe body: ${this}"
     python "hello world"
 }
 
