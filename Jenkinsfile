@@ -1,14 +1,20 @@
 @Library('jenkins-ext') _
-import org.tools.*
 
-// require 'python'
+require 'python'
+require name: 'ruby', version: '2.4'
 
-println this.getClass()
 
-kubepipe() {
-    stage('test') {
-        println this.getClass()
-        // python '--version'
+
+kubepipe(serviceAccount: 'jenkins-admin', nodeLabel: 'windows') {
+    stage('python test') {
+        container('python') {
+            sh script: 'python --version'
+        }
+    }
+    stage('ruby test') {
+        container('ruby') {
+            sh script: 'ruby --version'
+        }
     }
 }
 

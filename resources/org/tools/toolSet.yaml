@@ -1,41 +1,25 @@
 kubectl: 
-  spec:
-    name: 'kubectl'
-    image: 'fscottmiller/kubectl'
-    ttyEnabled: true
-    command: 'cat'
-  commands:
-    kubectl: kubectl
+  name: 'kubectl'
+  image: 'fscottmiller/kubectl'
+  ttyEnabled: true
+  command: 'cat'
 helm: 
-  spec:
-    name: 'helm'
-    image: 'fscottmiller/helm'
-    ttyEnabled: true
-    command: 'cat'
-  commands:
-    helm: helm
+  name: 'helm'
+  image: 'fscottmiller/helm'
+  ttyEnabled: true
+  command: 'cat'
 python: 
-  spec:
-    name: 'python'
-    image: 'python'
-    ttyEnabled: true
-    command: 'cat'
-  commands:
-    python: python
+  name: 'python'
+  image: 'python'
+  ttyEnabled: true
+  command: 'cat'
 ruby: 
-  spec:
-    name: 'ruby'
-    image: 'ruby'
-    ttyEnabled: true
-    command: 'cat'
-  commands:
-    ruby: ruby
+  name: 'ruby'
+  image: 'ruby'
+  ttyEnabled: true
+  command: 'cat'
 nodejs: 
-  spec:
-    name: 'nodejs'
-    image: 'node'
-    ttyEnabled: true
-    command: 'cat'
-  commands:
-    nodejs: node
-    npm: npm
+  name: 'nodejs'
+  image: 'node'
+  ttyEnabled: true
+  command: 'cat'
