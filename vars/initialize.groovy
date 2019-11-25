@@ -2,7 +2,7 @@ def call(parent) {
     def tools = readYaml(text: libraryResource('org/tools/toolSet.yaml'))
     tools.each {
         tool -> tool.value['commands'].each {
-            command -> echo "${command.getClass()}"; parent."${command.key}" = { String input -> 
+            command -> echo "${command.getProperties()}"; parent."${command.key}" = { String input -> 
                 container(tool) {
                     sh script: "${command} ${input}", returnStdout: true
                 }
