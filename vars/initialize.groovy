@@ -3,7 +3,7 @@ def call(parent) {
     commands.each {
         tool -> parent."${tool}" = { String input -> 
             container(tool) {
-                sh script: "${tool} ${input}" 
+                sh script: "${tool} ${input}", returnStdout: true
             }
         }
     }
