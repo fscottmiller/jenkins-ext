@@ -22,6 +22,7 @@ python:
     command: 'cat'
   commands: 
     python: python
+    pip: pip
 ruby:
   spec:
     name: 'ruby'

@@ -9,11 +9,6 @@ kubepipe(serviceAccount: 'jenkins-admin') {
     def version = python "--version"
     echo version
 
-    echo "${npm '--version'}"
-    echo "${nodejs '--version'}"
-    echo "${ruby '--version'}"
-
-    echo "${gem 'list'}"
-    gem 'install cucumber'
-    echo "${gem 'list'}"
+    def gems = gem 'list'
+    echo "$gems"
 }
