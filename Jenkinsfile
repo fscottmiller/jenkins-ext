@@ -6,4 +6,5 @@ initialize this
 
 kubepipe(serviceAccount: 'jenkins-admin') {
     python "hello world"
+    nodejs "foo bar"
 }

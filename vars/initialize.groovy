@@ -1,14 +1,6 @@
 def call(parent) {
-    def commands = [
-        ruby: ['ruby'], 
-        python: ['python'],
-        nodejs: ['node', 'npm']
-    ]
+    def commands = ['ruby', 'python', 'nodejs']
     commands.each {
-        tool -> commands[tool].each {
-            command -> parent."${command}" = {
-                println command
-            }
-        }
+        tool -> this."${tool}" = { println tool }
     }
 }
