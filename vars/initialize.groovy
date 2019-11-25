@@ -1,10 +1,12 @@
 def call(parent) {
-    def commands = ['ruby', 'python', 'nodejs']
-    commands.each {
-        tool -> parent."${tool}" = { String input -> 
-            container(tool) {
-                sh script: "${tool} ${input}", returnStdout: true
+    def tools = readYaml(text: libraryResource('org/tools/toolSet.yaml'))
+    tools.each {
+        tool -> tool['commands'].each {
+            command -> parent."${command}" = { String input -> 
+                container(tool) {
+                    sh script: "${command} ${input}", returnStdout: true
+                }
             }
         }
-    }
+    }   
 }
