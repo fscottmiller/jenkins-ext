@@ -9,7 +9,7 @@ kubepipe(serviceAccount: 'jenkins-admin') {
     def version = python "--version"
     echo version
 
-    npm "--version"
-    nodejs "--version"
-    ruby "--version"
+    echo "${npm '--version'}"
+    echo "${nodejs '--version'}"
+    echo "${ruby '--version'}"
 }
