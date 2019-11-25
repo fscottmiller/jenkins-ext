@@ -3,13 +3,12 @@
 require 'helm'
 require 'kubectl'
 
-// def commands = ['ruby', 'python', 'nodejs']
-// commands.each {
-//     tool -> this."${tool}" = { println tool }
-// }
+def commands = ['ruby', 'python', 'nodejs']
+commands.each {
+    tool -> this."${tool}" = { println tool }
+}
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    println super
     python "hello world"
 }
 
