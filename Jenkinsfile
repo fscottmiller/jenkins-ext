@@ -3,10 +3,17 @@
 require 'python'
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    stage('test') {
-        using('python') {
-            sh script: "python --version"
-        }
+    stage('Create Namespace') {
+        // todo
+    }
+    stage('Create Service Account') {
+        // todo
+    }
+    stage('Create ConfigMap') {
+        // todo
+    }
+    stage('Deploy Application') {
+        // todo
     }
 }
 
