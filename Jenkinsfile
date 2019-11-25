@@ -9,7 +9,7 @@ require 'kubectl'
 // }
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    println this
+    println super
     python "hello world"
 }
 
