@@ -1,4 +1,4 @@
-@Library('jenkins-ext') _
+@Library('jenkins-ext@dynamicFunctions') _
 
 require 'helm'
 require 'kubectl'
