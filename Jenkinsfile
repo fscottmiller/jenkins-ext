@@ -4,6 +4,7 @@ require 'helm'
 require 'kubectl'
 
 kubepipe(serviceAccount: 'jenkins-admin') {
+    println this
     python "hello world"
 }
 

@@ -5,6 +5,7 @@ def call(Map options=[:], Closure body) {
     commands.each {
         tool -> this."${tool}" = { println tool }
     }
+    println this
     options['containers'] = Tools.getRequired()
     podTemplate(options) {
         node(POD_LABEL) {
