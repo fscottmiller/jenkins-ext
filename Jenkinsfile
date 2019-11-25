@@ -3,16 +3,14 @@
 require 'python'
 require name: 'ruby', version: '2.4'
 
-
-
-kubepipe(serviceAccount: 'jenkins-admin', nodeLabel: 'windows') {
+kubepipe(serviceAccount: 'jenkins-admin') {
     stage('python test') {
-        container('python') {
+        using('python') {
             sh script: 'python --version'
         }
     }
     stage('ruby test') {
-        container('ruby') {
+        using('ruby') {
             sh script: 'ruby --version'
         }
     }
