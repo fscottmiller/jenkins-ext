@@ -5,16 +5,24 @@ require 'kubectl'
 
 kubepipe(serviceAccount: 'jenkins-admin') {
     stage('Create Namespace') {
-        // todo
+        using('kubectl') {
+            // todo
+        }
     }
     stage('Create Service Account') {
-        // todo
+        using('kubectl') {
+            // todo
+        }
     }
     stage('Create ConfigMap') {
-        // todo
+        using('kubectl') {
+            // todo
+        }
     }
     stage('Deploy Application') {
-        // todo
+        using('helm') {
+            // todo
+        }
     }
 }
 
