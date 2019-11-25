@@ -2,16 +2,12 @@
 
 require 'helm'
 require 'kubectl'
+initialize this
 
-def commands = ['ruby', 'python', 'nodejs']
-commands.each {
-    tool -> this."${tool}" = { println tool }
-}
-
-println "jenkinsfile body: ${this}"
+// println "jenkinsfile body: ${this}"
 
 kubepipe(serviceAccount: 'jenkins-admin') {
-    println "kube pipe body: ${this}"
+    // println "kube pipe body: ${this}"
     python "hello world"
 }
 
