@@ -5,7 +5,7 @@ kubectl:
     ttyEnabled: true
     command: 'cat'
   commands: 
-    - kubectl: kubectl
+    kubectl: kubectl
 helm: 
   spec:
     name: 'helm'
@@ -13,7 +13,7 @@ helm:
     ttyEnabled: true
     command: 'cat'
   commands: 
-    - helm: helm
+    helm: helm
 python: 
   spec:
     name: 'python'
@@ -21,7 +21,7 @@ python:
     ttyEnabled: true
     command: 'cat'
   commands: 
-    - python: python
+    python: python
 ruby:
   spec:
     name: 'ruby'
@@ -29,7 +29,7 @@ ruby:
     ttyEnabled: true
     command: 'cat'
   commands: 
-    - ruby: ruby
+    ruby: ruby
 nodejs: 
   spec:
     name: 'nodejs'
@@ -37,5 +37,5 @@ nodejs:
     ttyEnabled: true
     command: 'cat'
   commands: 
-    - nodejs: node
-    - npm: npm
+    nodejs: node
+    npm: npm
