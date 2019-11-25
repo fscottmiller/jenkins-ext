@@ -4,7 +4,7 @@ def call(parent) {
         tool -> tool.value['commands'].each {
             command -> 
                 echo "${tool.getClass()}"
-                echo "${tool.key}"
+                echo "${tool.key.getClass()}"
                 parent."${command.key}" = { String input -> 
                 container(tool.key) {
                     sh script: "${command.value} ${input}", returnStdout: true
