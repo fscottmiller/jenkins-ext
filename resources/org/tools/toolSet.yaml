@@ -32,6 +32,8 @@ ruby:
   commands: 
     ruby: ruby
     gem: gem
+    rake: rake
+    bundle: bundle
 nodejs: 
   spec:
     name: 'nodejs'
