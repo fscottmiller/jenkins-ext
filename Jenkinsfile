@@ -12,4 +12,8 @@ kubepipe(serviceAccount: 'jenkins-admin') {
     echo "${npm '--version'}"
     echo "${nodejs '--version'}"
     echo "${ruby '--version'}"
+
+    echo "${gem 'list'}"
+    gem 'install cucumber'
+    echo "${gem 'list'}"
 }

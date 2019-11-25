@@ -30,6 +30,7 @@ ruby:
     command: 'cat'
   commands: 
     ruby: ruby
+    gem: gem
 nodejs: 
   spec:
     name: 'nodejs'
