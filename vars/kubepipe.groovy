@@ -1,7 +1,9 @@
 import org.tools.*
 
 def call(Map options=[:], Closure body) {
-    println "${this.getProperties()}"
+    new Throwable().stackTrace.each {
+        println it
+    }
     options['containers'] = Tools.getRequired()
     podTemplate(options) {
         node(POD_LABEL) {
