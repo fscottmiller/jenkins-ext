@@ -6,7 +6,6 @@ intitialize this
 
 kubepipe(serviceAccount: 'jenkins-admin') {
     stage('Create Namespace') {
-    
             def namespaces = sh script: "kubectl get ns --no-headers -o custom-columns=':metadata.name'", 
                 label: "Get Namespaces",
                 returnStdout: true
@@ -22,7 +21,6 @@ kubepipe(serviceAccount: 'jenkins-admin') {
     }
 
     stage('Create Service Account') {
-        
             def serviceAccounts = sh script: "kubectl get sa -n ${namespace} --no-headers -o custom-columns=':metadata.name'",
                 label: "Get Service Accounts",
                 returnStdout: true
@@ -37,11 +35,9 @@ kubepipe(serviceAccount: 'jenkins-admin') {
                 sh script: "kubectl create clusterrolebinding ${namespace}-${name} --clusterrole=cluster-admin --serviceaccount=${namespace}:${name}",
                 label: "Creating cluster role binding ${namespace}-${name}"
             }
-    
     }
 
     stage('Create ConfigMap') {
-        
             def configMaps = sh script: "kubectl get configmaps -n ${namespace} --no-headers -o custom-columns=':metadata.name'",
                 label: "Get ConfigMaps",
                 returnStdout: true
@@ -59,12 +55,23 @@ kubepipe(serviceAccount: 'jenkins-admin') {
                 sh script: "kubectl create configmap ${name} -n ${namespace} --from-file ${fileName}",
                 label: "Creating ConfigMap ${name}"
             }
-          
     } 
 
     stage('Deploy Application') {
-        
-        
+            def deployInstances(dir = "instances") {
+                if (fileExists(dir)) {
+                    def instances = sh script: "ls ${dir}", 
+                    label: "Get Instances", 
+                    returnStdout: true
+                    instances.each {
+                        deploy(it)
+                    }
+                } 
+                else {
+                    deploy()
+                }
+            }
+            
             def deploy(instance = "") {
                 def namespace = BRANCH_NAME
                 def appName = "jenkins"
@@ -79,8 +86,7 @@ kubepipe(serviceAccount: 'jenkins-admin') {
                 createConfigMap(configMapName, instance, namespace)
                 install(appName, instance, namespace)
             }
-        }
-    
+        }    
 }
 
 
