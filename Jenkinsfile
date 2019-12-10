@@ -5,6 +5,8 @@ require 'kubectl'
 intitialize this 
  def namespace = BRANCH_NAME
 
+// testing global git hooks - can delete
+
 kubepipe(serviceAccount: 'jenkins-admin') {
     stage('Create Namespace') {
             def namespaces = kubectl "get ns --no-headers -o custom-columns=':metadata.name'" 

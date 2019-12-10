@@ -45,9 +45,17 @@ nodejs:
     npm: npm
 terraform:
   spec:
-    name: 'terraform'
-    image: 'hashicorp/terraform'
+    name: terraform
+    image: hashicorp/terraform
     ttyEnabled: true
-    command: 'cat'
+    command: cat
   commands:
     terraform: terraform
+curl:
+  spec:
+    name: curl
+    image: curlimages/curl
+    ttyEnabled: true
+    command: cat
+  commands:
+    curl: curl
