@@ -55,7 +55,7 @@ curl:
   spec:
     name: curl
     image: curlimages/curl
-      ttyEnabled: true
-      command: cat
+    ttyEnabled: true
+    command: cat
   commands:
     curl: curl
