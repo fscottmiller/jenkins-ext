@@ -1,3 +1,4 @@
+// merges a list of yaml files and returns a map
 def call(files) {
     echo "Merging configuration"
     def config = [:]
