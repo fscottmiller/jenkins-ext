@@ -43,3 +43,11 @@ nodejs:
   commands: 
     nodejs: node
     npm: npm
+terraform:
+  spec:
+    name: 'terraform'
+    image: 'hashicorp/terraform'
+    ttyEnabled: true
+    command: 'cat'
+  commands:
+    terraform: terraform

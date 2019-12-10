@@ -8,7 +8,7 @@ class Simple extends BasePipelineTest {
     @Before
     void setUp() {
         super.setUp()
-        script = loadScript("vars/simple.groovy")
+        script = loadScript("vars/getYamlFiles.groovy")
     }
     @Test
     void should_print_value() throws Exception {
