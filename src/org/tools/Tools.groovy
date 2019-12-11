@@ -24,7 +24,7 @@ class Tools implements Serializable {
     }
 
     public static require(tool, version, image) {
-        def req = [ "${tool}" : [ 'spec' : [:], 'commands' : [ "${tool}" : "" ] ]
+        def req = [ "${tool}" : [ 'spec' : [:], 'commands' : [ "${tool}" : "" ] ] ]
         req['spec']['name'] = tool
         req['spec']['image'] = "${image}:${version}"
         req['spec']['ttyEnabled'] = true
