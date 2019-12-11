@@ -1,3 +1,5 @@
+import org.tools.Tools
+
 def call(parent) {
     def tools = readYaml(text: libraryResource('org/tools/toolSet.yaml'))
     tools.each {
@@ -10,5 +12,17 @@ def call(parent) {
                 }
             }
         }
-    }   
+    }
+    def toolSet = Tools.getRequired()
+    toolSet.each {
+        tool -> if ( !tools.keySet().contains(tool['name']) ) {
+            parent."${tool['name']}" = { String input -> 
+                container(tool['name']) {
+                    sh script: "${tool['name']} ${input}",
+                        label: "${tool['name']} ${input}",
+                        returnStdout: true
+                }
+            }
+        }
+    }
 }
