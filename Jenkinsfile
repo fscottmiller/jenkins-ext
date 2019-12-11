@@ -1,4 +1,4 @@
-@Library('jenkins-ext@allowCustomTools') _
+@Library("jenkins-ext@${BRANCH_NAME}") _
 
 require 'ruby'
 require name: 'ubuntu', image: 'ubuntu'
