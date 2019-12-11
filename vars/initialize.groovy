@@ -18,8 +18,8 @@ def call(parent) {
         tool -> if ( !tools.keySet().contains(tool['name']) ) {
             parent."${tool['name']}" = { String input -> 
                 container(tool['name']) {
-                    sh script: "${tool['name']} ${input}",
-                        label: "${tool['name']} ${input}",
+                    sh script: "${input}",
+                        label: "${input}",
                         returnStdout: true
                 }
             }
