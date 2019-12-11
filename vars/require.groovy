@@ -18,6 +18,10 @@ def call(Map tool) {
     if (Tools.getToolSet().isEmpty()) {
             Tools.setToolSet(readYaml(text: libraryResource('org/tools/toolSet.yaml')))
     }
-    Tools.require tool['name'], tool['version']
+    if ( tool.keySet().contains('image') ) {
+        Tools.require tool['name'], tool['version'], tool['image']
+    } else {
+        Tools.require tool['name'], tool['version']
+    }
 }
 
