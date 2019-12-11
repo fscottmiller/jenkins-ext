@@ -7,9 +7,9 @@ initialize this
 
 kubepipe {
     stage('a') {
-        ruby '--version'
+        echo "${ruby '--version'}"
     }
     stage('b') {
-        ubuntu 'cat /etc/os-release'
+        echo "${ubuntu 'cat /etc/os-release'}"
     }
 }
