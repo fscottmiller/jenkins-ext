@@ -19,6 +19,9 @@ def call(Map tool) {
             Tools.setToolSet(readYaml(text: libraryResource('org/tools/toolSet.yaml')))
     }
     if ( tool.keySet().contains('image') ) {
+        if ( !tool.keySet().contains('version') ) {
+            tool['version'] = 'latest'
+        }
         Tools.require tool['name'], tool['version'], tool['image']
     } else {
         Tools.require tool['name'], tool['version']

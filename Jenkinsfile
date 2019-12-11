@@ -1,7 +1,7 @@
 @Library('jenkins-ext@allowCustomTools') _
 
 require 'ruby'
-require name: 'ubuntu', image: 'ubuntu', version: 'latest'
+require name: 'ubuntu', image: 'ubuntu'
 
 initialize this
 
