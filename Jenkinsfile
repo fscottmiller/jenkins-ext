@@ -8,9 +8,10 @@ import org.tools.*
 
 // initialize this
 
+def out = Tools.getYaml().toString()
+
 kubepipe {
     stage('a') {
-        def out = Tools.getYaml().toString()
         echo "${out}"
     }
 }
