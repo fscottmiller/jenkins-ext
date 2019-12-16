@@ -7,17 +7,11 @@ require 'kubectl', 'latest'
 
 initialize this
 
-kubepipe {
-    stage('a') {
-        echo "${ruby '--version'}"
-    }
-    stage('b') {
-        echo "${ubuntu 'cat /etc/os-release'}"
-    }
-    stage('c') { 
-        echo "${python '--version'}"
-    }
-    stage('d') {
-        echo "${kubectl 'version'}"
+pipeline {
+    agent any
+    stages {
+        stage('test') {
+            kube
+        }
     }
 }
