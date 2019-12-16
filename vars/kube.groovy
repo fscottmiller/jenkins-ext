@@ -13,7 +13,7 @@ def call(Map options=[:]) {
     // options['spec']['containers'] = Tools.getRequired()
     // echo "${options.getClass()}"
     // echo "${options}"
-    def yaml = new Yaml().dump(options)
+    String yaml = new Yaml().dump(options)
     echo "${yaml.getClass()}"
     return yaml
 }
