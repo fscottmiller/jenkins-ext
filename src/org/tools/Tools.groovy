@@ -23,8 +23,8 @@ class Tools implements Serializable {
         def ret = [:]
         ret['apiVersion'] = 'v1'
         ret['kind'] = 'Pod'
-        ret['spec'] = [:]
-        ret['spec']['containers'] = required
+        ret['spec'] = ['containers': required]
+        // ret['spec']['containers'] = required
         return new Yaml().dump(ret)
     }
 
