@@ -8,7 +8,7 @@ def call(Map options=[:]) {
     tmp['containers'] = Tools.getRequired()
     options['spec'] = tmp
     options['containers'].each { 
-        it['spec']['command'] = ['cat']
+        con -> con['spec']['command'] = ['cat']
     }
     // options['spec']['containers'] = Tools.getRequired()
     // echo "${options.getClass()}"
