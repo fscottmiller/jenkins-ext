@@ -1,5 +1,5 @@
 library "jenkins-ext@${BRANCH_NAME}" 
-import org.tools.*
+import org.tools.Tools
 
 // require 'ruby'
 // require name: 'ubuntu', image: 'ubuntu'
