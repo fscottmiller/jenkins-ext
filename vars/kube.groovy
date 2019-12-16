@@ -11,6 +11,6 @@ def call(Map options=[:]) {
     // echo "${options.getClass()}"
     // echo "${options}"
     def yaml = new Yaml().dump(options)
-
+    echo "${yaml.getClass()}"
     return yaml
 }
