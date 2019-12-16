@@ -14,6 +14,6 @@ kubepipe {
         foo = "hello world"
     }
     stage('a') {
-        echo env
+        echo "${env}"
     }
 }
