@@ -8,7 +8,11 @@ require 'kubectl', 'latest'
 initialize this
 
 pipeline {
-    agent any
+    agent {
+        kubernetes {
+            yaml kube()
+        }
+    }
     stages {
         stage('test') {
             steps {
