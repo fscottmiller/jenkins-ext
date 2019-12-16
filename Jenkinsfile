@@ -11,7 +11,9 @@ pipeline {
     agent any
     stages {
         stage('test') {
-            kube
+            steps {
+                kube
+            }
         }
     }
 }
