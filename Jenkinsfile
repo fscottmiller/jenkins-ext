@@ -5,7 +5,7 @@ require 'ruby'
 pipeline {
     agent {
         kubernetes {
-            yaml tmp()
+            yaml tmp().toString()
         }
     }
     stages {
