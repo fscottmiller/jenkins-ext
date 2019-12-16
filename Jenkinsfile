@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                kube()
+                python "--version"
             }
         }
     }
