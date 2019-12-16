@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                initialize this
+                kube()
             }
         }
     }
