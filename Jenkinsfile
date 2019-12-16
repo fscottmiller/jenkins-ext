@@ -13,4 +13,9 @@ kubepipe {
     environment {
         foo = "hello world"
     }
+    stage('a') {
+        environment {
+            bar = 'foo'
+        }
+    }
 }
