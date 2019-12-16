@@ -7,18 +7,8 @@ require 'kubectl', 'latest'
 
 initialize this
 
-pipeline {
-    agent {
-        kubernetes {
-            yaml kube()
-        }
-    }
-    stages {
-        stage('test') {
-            steps {
-                echo "${kube()}"
-                python "--version"
-            }
-        }
+kubepipe {
+    stage('a') {
+        python '--version'
     }
 }
