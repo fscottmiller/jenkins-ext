@@ -10,7 +10,7 @@ library "jenkins-ext@${BRANCH_NAME}"
 // env.foo = "hello world"
 
 kubepipe {
-    environment foo: 'bar', bar: 'myValue'
+    setEnv foo: 'bar', bar: 'myValue'
     stage('a') {
         echo "${sh "env"}"
     }
