@@ -7,7 +7,11 @@ require 'kubectl', 'latest'
 
 initialize this
 
-env.foo = "hello world"
+environment {
+    foo = "hello world"
+}
+
+// env.foo = "hello world"
 
 kubepipe {
     stage('a') {
