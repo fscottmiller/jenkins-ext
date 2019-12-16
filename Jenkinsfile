@@ -10,9 +10,7 @@ initialize this
 // env.foo = "hello world"
 
 kubepipe {
-    environment {
-        foo = "hello world"
-    }
+    env foo: 'bar', bar: 'myValue'
     stage('a') {
         echo "${sh "env"}"
     }
