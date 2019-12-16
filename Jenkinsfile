@@ -10,6 +10,6 @@ import org.tools.*
 
 kubepipe {
     stage('a') {
-        echo "${Tools.getYaml()}"
+        echo Tools.getYaml().toString()
     }
 }
