@@ -26,7 +26,7 @@ class Tools implements Serializable {
         ret['spec'] = [:]
         ret['spec']['containers'] = required
         ret['spec']['containers'].each {
-            container -> container['command'] = ['foo']
+            it['command'] = ['foo']
         }
         return new Yaml().dump(ret)
     }
