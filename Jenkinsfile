@@ -16,6 +16,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
+                echo "${kube()}"
                 python "--version"
             }
         }
