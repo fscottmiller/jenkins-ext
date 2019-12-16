@@ -1,7 +1,6 @@
 def call(Map vars) {
     vars.each {
-        key, value -> {
+        key, value -> 
             env."${key}" = value
-        }
     }
 }
