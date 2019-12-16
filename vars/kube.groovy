@@ -1,19 +1,13 @@
 import org.tools.*
-import org.yaml.snakeyaml.Yaml
 
-def call(Map options=[:]) {
-    options['apiVersion'] = 'v1'
-    options['kind'] = 'Pod'
-    def tmp = [:]
-    tmp['containers'] = Tools.getRequired()
-    options['spec'] = tmp
-    options['containers'].each { 
-        con -> con['spec']['command'] = ['cat']
+def call(Map options=[:], Closure body) {
+    options['containers'] = Tools.getRequired()
+    podTemplate(options) {
+        node(POD_LABEL) {
+            pipeline {
+                body()
+            }
+            // body()
+        }
     }
-    // options['spec']['containers'] = Tools.getRequired()
-    // echo "${options.getClass()}"
-    // echo "${options}"
-    String yaml = new Yaml().dump(options)
-    echo "${yaml.getClass()}"
-    return yaml
 }
