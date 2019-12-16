@@ -1,7 +1,9 @@
 library "jenkins-ext@${BRANCH_NAME}" 
 
-kubepipe {
-    stage('a') {
-        tmp()
+pipeline {
+    agent {
+        kubernetes {
+            yaml tmp()
+        }
     }
 }
