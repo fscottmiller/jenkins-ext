@@ -5,7 +5,7 @@ library "jenkins-ext@${BRANCH_NAME}"
 // require name: 'python', version: '3.6.0'
 // require 'kubectl', 'latest'
 
-initialize this
+// initialize this
 
 // env.foo = "hello world"
 
