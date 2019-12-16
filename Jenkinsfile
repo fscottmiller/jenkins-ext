@@ -1,4 +1,5 @@
 library "jenkins-ext@${BRANCH_NAME}" 
+import org.tools.*
 
 // require 'ruby'
 // require name: 'ubuntu', image: 'ubuntu'
@@ -7,11 +8,8 @@ library "jenkins-ext@${BRANCH_NAME}"
 
 // initialize this
 
-// env.foo = "hello world"
-
 kubepipe {
-    setEnv foo: 'bar', bar: 'myValue'
     stage('a') {
-        echo "${sh "env"}"
+        echo "${Tools.getYaml()}"
     }
 }

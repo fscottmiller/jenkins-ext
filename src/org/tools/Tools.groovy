@@ -1,5 +1,7 @@
 package org.tools
 
+import org.yaml.snakeyaml.Yaml
+
 class Tools implements Serializable {
     private static toolSet = [:]
 
@@ -15,6 +17,15 @@ class Tools implements Serializable {
 
     public static getRequired() {
         return required
+    }
+
+    public static getYaml() {
+        def ret = [:]
+        ret['apiVersion'] = 'v1'
+        ret['kind'] = 'Pod'
+        ret['spec'] = [:]
+        ret['spec']['containers'] = required
+        return new Yaml().dump(ret)
     }
 
     public static require(tool, version) {
