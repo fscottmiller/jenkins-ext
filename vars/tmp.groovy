@@ -1,6 +1,6 @@
 import org.tools.*
 
 def call() {
-    echo "${Tools.getYaml().getClass()}"
+    echo Tools.getYaml()
     return Tools.getYaml()
 }
