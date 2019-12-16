@@ -5,7 +5,15 @@ require 'ruby'
 pipeline {
     agent {
         kubernetes {
-            yaml tmp()
+      yaml """
+spec:
+  containers:
+  - name: golang
+    image: golang:1.6.3-alpine
+    command:
+    - cat
+    tty: true
+"""
         }
     }
     stages {
