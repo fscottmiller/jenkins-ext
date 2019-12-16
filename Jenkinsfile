@@ -13,7 +13,14 @@ kubepipe {
     environment {
         foo = "hello world"
     }
-    stage('a') {
-        ubuntu "echo '${foo}'"
+    stages {
+        stage('a') {
+            steps {
+                ubuntu "echo ${foo}"
+            }
+        }
     }
+    // stage('a') {
+    //     ubuntu "echo '${foo}'"
+    // }
 }
