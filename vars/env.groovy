@@ -1,5 +1,5 @@
-def call(Map vars) {
-    vars.each {
+def call(Map envVars) {
+    envVars.each {
         key, value -> 
             echo "${key}"
             echo "${value}"
