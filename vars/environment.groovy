@@ -1,3 +1,3 @@
 def call(Closure body) {
-    echo body.getProperties().toString()
+    echo body.metaClass.classNode.getDeclaredMethods("doCall")[0].code.text
 }
