@@ -1,3 +1,3 @@
 def call(Closure body) {
-    echo "${body}"
+    echo body.getProperties().toString()
 }
