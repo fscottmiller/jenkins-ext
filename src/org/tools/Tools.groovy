@@ -29,6 +29,8 @@ class Tools implements Serializable {
         ret['spec']['containers'].each {
             it['command'] = ['cat']
         }
+        def jnlp = ['name': 'jnlp', 'image': 'jenkins/jnlp-slave', 'ttyEnabled': 'true', 'command': ['cat']]
+        ret['spec']['containers'] += jnlp
         return new Yaml().dump(ret)
     }
 
