@@ -1,8 +1,12 @@
 library "jenkins-ext@${BRANCH_NAME}" 
 
-require 'ruby'
-initialize this
+// require 'ruby'
+// initialize this
+
+environment {
+    foo = "bar"
+}
 
 kubepipe {
-    ruby '--version'
+    echo env.foo
 }
