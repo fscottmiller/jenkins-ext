@@ -6,8 +6,6 @@ library "jenkins-ext@${BRANCH_NAME}"
 
 
 kubepipe {
-    environment {
-        foo = "bar"
-    }
-    echo env.foo
+    def foo = credentials('gcp')
+    echo "${foo}"
 }
