@@ -7,5 +7,5 @@ setEnvironment foo: 'bar', creds: credentials('gcp')
 
 kubepipe {
     // ubuntu "echo ${foo}"
-    echo "${ubuntu "env"}"
+    println "${ubuntu 'env'}"
 }
