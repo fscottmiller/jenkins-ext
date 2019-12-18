@@ -19,21 +19,6 @@ class Tools implements Serializable {
         return required
     }
 
-    public static getYaml() {
-        def ret = [:]
-        ret['apiVersion'] = 'v1'
-        ret['kind'] = 'Pod'
-        // ret['spec'] = ['containers': required]
-        ret['spec'] = [:]
-        ret['spec']['containers'] = required
-        ret['spec']['containers'].each {
-            it['command'] = ['cat']
-        }
-        // def jnlp = ['name': 'jnlp', 'image': 'jenkins/jnlp-slave', 'ttyEnabled': 'true', 'command': ['cat']]
-        // ret['spec']['containers'] += jnlp
-        return new Yaml().dump(ret)
-    }
-
     public static require(tool, version) {
         def req = toolSet[tool]['spec']
         req['image'] += ":${version}"
