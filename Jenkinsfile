@@ -7,5 +7,5 @@ setEnvironment foo: 'bar', creds: credentials('gcp')
 
 kubepipe {
     echo foo
-    echo "$creds"
+    echo "${creds}"
 }
