@@ -3,9 +3,8 @@ library "jenkins-ext@${BRANCH_NAME}"
 // require 'ruby'
 // initialize this
 
-
+setEnvironment foo: 'bar'
 
 kubepipe {
-    def foo = credentials('gcp')
-    echo "${foo}"
+    echo foo
 }
