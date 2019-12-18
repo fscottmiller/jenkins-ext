@@ -3,10 +3,11 @@ library "jenkins-ext@${BRANCH_NAME}"
 // require 'ruby'
 // initialize this
 
-environment {
-    foo = "bar"
-}
+
 
 kubepipe {
+    environment {
+        foo = "bar"
+    }
     echo env.foo
 }
