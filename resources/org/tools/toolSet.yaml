@@ -46,7 +46,7 @@ nodejs:
 terraform:
   spec:
     name: terraform
-    image: skulasekar/terraform
+    image: hashicorp/terraform
     ttyEnabled: true
     command: cat
   commands:
