@@ -1,4 +1,4 @@
-def call(List params) {
+def call(params) {
     node {
         //properties([
             parameters(
