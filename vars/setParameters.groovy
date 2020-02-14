@@ -1,10 +1,10 @@
 def call(params) {
     node {
-        //properties([
+        properties([
             parameters(
                 params
             )
-        //])
+        ])
     }
 }
 /*
