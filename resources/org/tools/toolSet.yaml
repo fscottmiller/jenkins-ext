@@ -51,4 +51,3 @@ terraform:
     command: cat
   commands:
     terraform: terraform
-curl:
