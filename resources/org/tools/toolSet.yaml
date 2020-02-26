@@ -1,9 +1,9 @@
 powershell:
   spec:
-    name: powershell
-    image: mcr.microsoft.com/powershell
+    name: 'powershell'
+    image: 'mcr.microsoft.com/powershell'
     ttyEnabled: true
-    command: cat
+    command: 'cat'
    commands:
     powershell: powershell
 kubectl: 
