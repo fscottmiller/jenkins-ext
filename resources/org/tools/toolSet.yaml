@@ -1,11 +1,11 @@
 powershell:
   spec:
-     name: 'powershell'
-     image: 'mcr.microsoft.com/powershell'
-     ttyEnabled: true
-     command: 'cat'
-   commands:
-     powershell: powershell
+    name: 'powershell'
+    image: 'mcr.microsoft.com/powershell'
+    ttyEnabled: true
+    command: 'cat'
+  commands:
+    powershell: powershell
 kubectl: 
   spec:
     name: 'kubectl'
@@ -60,10 +60,3 @@ terraform:
   commands:
     terraform: terraform
 curl:
-  spec:
-    name: curl
-    image: curlimages/curl
-    ttyEnabled: true
-    command: cat
-  commands:
-    curl: curl
